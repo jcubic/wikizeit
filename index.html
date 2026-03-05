@@ -27,9 +27,12 @@
     <link rel="canonical" href="https://jcubic.pl/wikizeit/">
     <script>
      (function() {
+         document.documentElement.classList.add('icons-hidden');
+
          function icons_ready() {
              document.documentElement.classList.remove('icons-hidden');
          }
+
          if (document.fonts && document.fonts.ready) {
              const font = '24px "Material Symbols Outlined"';
              document.fonts.load(font).then(icons_ready);
@@ -38,8 +41,8 @@
          }
      })();
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <style>
 /* Reset and base styles */
 * {
