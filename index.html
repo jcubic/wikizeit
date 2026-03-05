@@ -568,35 +568,100 @@ header {
     margin: 0;
 }
 
-.status-link {
+/* Email Form */
+.email-form-container {
     display: flex;
-    height: 4rem;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
-    border-radius: var(--border-radius-2xl);
-    background-color: var(--color-primary);
-    padding: 0 2.5rem;
-    font-size: 1.125rem;
-    font-weight: 900;
-    color: var(--color-white);
-    text-decoration: none;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .email-form {
+        flex-direction: row;
+    }
+}
+
+.email-input {
+    flex: 1;
+    height: 3.5rem;
+    padding: 0 1rem;
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--color-slate-700);
+    background-color: rgba(26, 14, 12, 0.5);
+    color: var(--color-slate-100);
+    font-size: 1rem;
+    font-family: var(--font-display);
     transition: all 0.2s;
 }
 
-.status-link:hover {
-    transform: scale(1.02);
+.email-input::placeholder {
+    color: var(--color-slate-500);
 }
 
-.status-link:active {
+.email-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(180, 33, 4, 0.1);
+}
+
+.email-submit {
+    display: flex;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--border-radius-xl);
+    background-color: var(--color-primary);
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.email-submit:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(180, 33, 4, 0.2);
+}
+
+.email-submit:active {
     transform: scale(0.95);
 }
 
-.status-link .material-symbols-outlined {
+.email-submit .material-symbols-outlined {
     transition: transform 0.2s;
 }
 
-.status-link:hover .material-symbols-outlined {
+.email-submit:hover .material-symbols-outlined {
     transform: translateX(0.25rem);
+}
+
+.form-privacy-text {
+    font-size: 0.75rem;
+    color: var(--color-slate-500);
+    text-align: center;
+    margin: 0;
+}
+
+.form-privacy-text a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.form-privacy-text a:hover {
+    opacity: 0.8;
 }
 
 .status-bg-decoration {
@@ -911,10 +976,27 @@ footer {
               </div>
               <p class="status-description">Dołącz do naszej społeczności i bądź na bieżąco z każdą aktualizacją.</p>
             </div>
-            <a class="status-link" href="https://jcubic.pl">
-              Śledź postępy na jcubic.pl
-              <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
+            <div class="email-form-container">
+              <form class="email-form" action="#" method="POST">
+                <input
+                  type="email"
+                  name="email"
+                  class="email-input"
+                  placeholder="Twój adres email"
+                  required
+                  aria-label="Adres email"
+                />
+                <button type="submit" class="email-submit">
+                  Śledź postępy
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </form>
+              <!--
+              <p class="form-privacy-text">
+                Zapisując się, akceptujesz naszą <a href="#">politykę prywatności</a>
+              </p>
+               -->
+            </div>
           </div>
           <!-- Decorative bg -->
           <div class="status-bg-decoration">
