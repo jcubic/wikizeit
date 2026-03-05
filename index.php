@@ -54,7 +54,8 @@ $graph = [
             'sameAs' => [
                 //'https://www.wikidata.org[TWOJE_Q_WIKIDATA]', // Link do elementu, który stworzysz
                 'https://commons.wikimedia.org/wiki/Category:WikiZEIT',
-                'https://www.youtube.com/@WikiZEIT'
+                'https://www.youtube.com/@WikiZEIT',
+                'https://github.com/WikiZEIT'
             ]
         ]
     ]
@@ -1326,7 +1327,7 @@ footer {
             <a href="#">
               <span class="material-symbols-outlined">hub</span>
             </a>
-            <a href="https://github.com/jcubic/wikizeit">
+            <a href="https://github.com/WikiZEIT/wikizeit">
               <span class="material-symbols-outlined">link</span>
             </a>
           </div>
