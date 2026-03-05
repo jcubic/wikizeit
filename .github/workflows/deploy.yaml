@@ -28,6 +28,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             set -e
-            cd ${{ secrets.SEVER_PATH }}
+            cd ${{ secrets.SSH_PATH }}
             git pull
             composer install --no-dev --optimize-autoloader
