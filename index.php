@@ -57,6 +57,13 @@ $graph = [
                 'https://www.youtube.com/@WikiZEIT',
                 'https://github.com/WikiZEIT'
             ]
+        ],
+        [
+            '@type' => 'SoftwareSourceCode',
+            'name' => 'WikiZeit Blog Source Code',
+            'codeRepository' => 'https://github.com/WikiZEIT/blog',
+            'programmingLanguage' => 'PHP',
+            'author' => ['@id' => $person_id]
         ]
     ]
 ];
@@ -1324,10 +1331,12 @@ footer {
             © 2024 WikiZEIT. Treść dostępna na licencji <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
           </p>
           <div class="footer-social">
+            <!--
             <a href="#">
               <span class="material-symbols-outlined">hub</span>
             </a>
-            <a href="https://github.com/WikiZEIT/wikizeit">
+            -->
+            <a href="https://github.com/WikiZEIT/blog">
               <span class="material-symbols-outlined">link</span>
             </a>
           </div>
