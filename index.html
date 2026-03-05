@@ -57,6 +57,8 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    width: 1em;
 }
 .icons-hidden .material-symbols-outlined {
     visibility: hidden;
@@ -611,8 +613,10 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
-    max-width: 28rem;
+}
+
+.status-text-container, .email-form-container {
+    flex: 1;
 }
 
 .email-form {
@@ -620,6 +624,8 @@ header {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
+    box-sizing: content-box;
+    align-items: flex-start;
 }
 
 @media (min-width: 640px) {
@@ -654,6 +660,9 @@ header {
 .email-submit {
     gap: 0.5rem;
     white-space: nowrap;
+}
+.email-input {
+    flex: 1;
 }
 
 .email-submit .material-symbols-outlined {
