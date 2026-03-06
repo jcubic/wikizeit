@@ -59,6 +59,28 @@ $graph = [
             ]
         ],
         [
+            "@type" => "BreadcrumbList",
+            "@id" => "https://jcubic.pl/wikizeit/#breadcrumb",
+            "itemListElement" => [
+                [
+                    "@type" => "ListItem",
+                    "position" => 1,
+                    "item" => [
+                        "@id" => "https://jcubic.pl",
+                        "name" => "Głównie JavaScript"
+                    ]
+                ],
+                [
+                    "@type" => "ListItem",
+                    "position" => 2,
+                    "item" => [
+                        "@id" => "https://jcubic.pl/wikizeit/",
+                        "name" => "WikiZeit"
+                    ]
+                ]
+            ]
+        ],
+        [
             '@type' => 'SoftwareSourceCode',
             'name' => 'WikiZeit Blog Source Code',
             'codeRepository' => 'https://github.com/WikiZEIT/blog',
