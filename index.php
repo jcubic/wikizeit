@@ -37,7 +37,6 @@ $graph = [
             '@type' => 'WebPage',
             '@id' => WIKIZEIT_URL . '#webpage',
             'url' => WIKIZEIT_URL,
-            'publisher' => [ '@id' => WIKIZEIT_URL ],
             'isPartOf' => [ '@id' => 'https://jcubic.pl' ],
             'breadcrumb' => [ '@id' => WIKIZEIT_URL . '#breadcrumbs' ],
             'mainEntity' => [ '@id' => WIKIZEIT_URL ]
