@@ -1,0 +1,26 @@
+{
+  "name": "wikizeit",
+  "version": "0.1.0",
+  "description": "Edukacyjny projekt o Wikipedii i etycznym SEO autorstwa [Jakuba T. Janiewicza](https://jakub.jankiewicz.org/pl/). Odkryj mechanizmy największej encyklopedii świata i jej wpływu na twoją markę.",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "watch": "eleventy --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WikiZEIT/wikizeit.git"
+  },
+  "keywords": [],
+  "author": "Jakub T. Jankiewicz <jcubic@onet.pl> (https://jakub.jankiewicz.org/)",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/WikiZEIT/wikizeit/issues"
+  },
+  "homepage": "https://github.com/WikiZEIT/wikizeit#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

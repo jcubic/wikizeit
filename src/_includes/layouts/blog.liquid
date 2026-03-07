@@ -1,0 +1,36 @@
+---
+layout: layouts/base.liquid
+---
+
+<main class="blog-main">
+  <div class="blog-header">
+    {% if tag %}
+      <h1 class="blog-title">Artykuły z tagiem: {{ tag }}</h1>
+      <p class="blog-description">Wszystkie artykuły oznaczone tagiem "{{ tag }}".</p>
+    {% else %}
+      <h1 class="blog-title">{{ title | default: "Blog" }}</h1>
+      <p class="blog-description">Artykuły o Wikipedii, etycznym SEO i otwartej wiedzy.</p>
+    {% endif %}
+  </div>
+
+  {% if tag %}
+    {% assign postsList = collections[tag] | reverse %}
+  {% else %}
+    {% assign postsList = posts %}
+  {% endif %}
+
+  {% if postsList.size > 0 %}
+  <div class="posts-grid">
+    {% for post in postsList %}
+      {% include "partials/post-card.liquid", post: post %}
+    {% endfor %}
+  </div>
+
+  {% unless tag %}
+    {% include "partials/pagination.liquid" %}
+  {% endunless %}
+
+  {% else %}
+  <p class="text-slate-400">Brak artykułów do wyświetlenia.</p>
+  {% endif %}
+</main>

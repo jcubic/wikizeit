@@ -1,0 +1,36 @@
+<a class="post-card" href="{{ post.url | url }}">
+  {% if post.data.featuredImage %}
+  <div class="post-card-image">
+    <img src="{{ post.data.featuredImage | url }}" alt="{{ post.data.title }}" />
+  </div>
+  {% endif %}
+  <div class="post-card-body">
+    {% if post.data.tags %}
+    <div class="post-card-tags">
+      {% for tag in post.data.tags %}
+        {% unless tag == "post" %}
+        <span class="tag-badge">{{ tag }}</span>
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h3 class="post-card-title">{{ post.data.title }}</h3>
+    <p class="post-card-excerpt">
+      {% if post.data.description %}
+        {{ post.data.description }}
+      {% else %}
+        {{ post.content | excerpt: 150 }}
+      {% endif %}
+    </p>
+    <div class="post-card-meta">
+      <span class="post-card-meta-item">
+        <span class="material-symbols-outlined">calendar_today</span>
+        {{ post.date | dateFormat }}
+      </span>
+      <span class="post-card-meta-item">
+        <span class="material-symbols-outlined">schedule</span>
+        {{ post.content | readingTime }}
+      </span>
+    </div>
+  </div>
+</a>

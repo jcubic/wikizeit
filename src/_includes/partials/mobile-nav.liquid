@@ -1,0 +1,16 @@
+<div class="mobile-nav">
+  <div class="mobile-nav-container">
+    <a class="mobile-nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | url }}">
+      <span class="material-symbols-outlined">home</span>
+      <span class="mobile-nav-text">Start</span>
+    </a>
+    <a class="mobile-nav-link{% if page.url contains '/blog' %} active{% endif %}" href="{{ '/blog/' | url }}">
+      <span class="material-symbols-outlined">article</span>
+      <span class="mobile-nav-text">Blog</span>
+    </a>
+    <a class="mobile-nav-link{% if page.url == '/contact/' %} active{% endif %}" href="{{ '/contact/' | url }}">
+      <span class="material-symbols-outlined">mail</span>
+      <span class="mobile-nav-text">Kontakt</span>
+    </a>
+  </div>
+</div>

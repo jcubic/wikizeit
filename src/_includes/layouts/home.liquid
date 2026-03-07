@@ -1,0 +1,46 @@
+---
+layout: layouts/base.liquid
+schemaType: home
+---
+
+{% include "partials/hero.liquid" %}
+
+<!-- About Section -->
+<section class="section-about">
+  <div class="section-content-center">
+    <h2 class="section-title">O projekcie</h2>
+    <div class="section-text-container">
+      <p>
+        Projekt WikiZEIT wyrasta z ducha <span class="text-highlight">Open Source</span> oraz wieloletniego doświadczenia w ekosystemie Wikipedii. Skupiamy się na dostarczaniu rzetelnej wiedzy o mechanizmach wolnej encyklopedii oraz promowaniu etycznych praktyk w pozycjonowaniu stron.
+      </p>
+      <p>
+        Naszą misją jest demistyfikacja procesów redakcyjnych i technicznych, które stoją za najbardziej zaufanym źródłem informacji w internecie, przy jednoczesnym zachowaniu najwyższych standardów SEO.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Articles Section -->
+{% assign latestPosts = collections.post | reverse | limit: 5 %}
+{% if latestPosts.size > 0 %}
+<section class="section-latest">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Najnowsze artykuły</h2>
+      <a href="{{ '/blog/' | url }}" class="view-all-link">
+        Zobacz wszystkie
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+    <div class="posts-grid">
+      {% for post in latestPosts %}
+        {% include "partials/post-card.liquid", post: post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/subscribe.liquid" %}
+
+{{ content }}

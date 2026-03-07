@@ -1,0 +1,42 @@
+---
+layout: layouts/contact.liquid
+title: "Kontakt"
+description: "Masz pytania dotyczące projektu WikiZEIT? Chętnie odpowiemy na każde z nich."
+permalink: contact/
+---
+
+<h2 class="contact-form-title">Napisz do nas</h2>
+<p class="contact-form-subtitle">Wypełnij formularz, a odpowiemy najszybciej jak to możliwe.</p>
+
+<form class="contact-form" action="{{ site.apiUrl }}/contact/" method="POST">
+  <input type="hidden" name="redirect_url" value="{{ page.url }}" />
+  <input
+    type="text"
+    name="name_confirmation"
+    class="email-confirmation-field"
+    placeholder="Name confirmation"
+    tabindex="-1"
+    autocomplete="off"
+    aria-hidden="true"
+  />
+  <div class="contact-form-group">
+    <label class="contact-form-label" for="name">Imię i nazwisko</label>
+    <input class="contact-form-input" type="text" id="name" name="name" required placeholder="Jan Kowalski" />
+  </div>
+  <div class="contact-form-group">
+    <label class="contact-form-label" for="email">Adres email</label>
+    <input class="contact-form-input" type="email" id="email" name="email" required placeholder="jan@example.com" />
+  </div>
+  <div class="contact-form-group">
+    <label class="contact-form-label" for="subject">Temat</label>
+    <input class="contact-form-input" type="text" id="subject" name="subject" required placeholder="Temat wiadomości" />
+  </div>
+  <div class="contact-form-group">
+    <label class="contact-form-label" for="message">Wiadomość</label>
+    <textarea class="contact-form-textarea" id="message" name="message" rows="5" required placeholder="Twoja wiadomość..."></textarea>
+  </div>
+  <button type="submit" class="contact-form-submit">
+    Wyślij wiadomość
+    <span class="material-symbols-outlined">arrow_forward</span>
+  </button>
+</form>

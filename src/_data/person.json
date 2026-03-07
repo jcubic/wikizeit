@@ -1,0 +1,11 @@
+{
+    "@type": "Person",
+    "url": "https://jakub.jankiewicz.org/pl/",
+    "@id": "https://jakub.jankiewicz.org",
+    "name": "Jakub T. Jankiewicz",
+    "image": "https://live.staticflickr.com/65535/50132910231_73d867794f_k_d.jpg",
+    "jobTitle": "Senior Front-End Developer",
+    "sameAs": [
+        "https://www.wikidata.org/wiki/Q113688230"
+    ]
+}

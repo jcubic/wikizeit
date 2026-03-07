@@ -1,0 +1,89 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "{{ person['@type'] }}",
+      "url": "{{ person.url }}",
+      "@id": "{{ person['@id'] }}",
+      "name": "{{ person.name }}",
+      "image": "{{ person.image }}",
+      "jobTitle": "{{ person.jobTitle }}",
+      "sameAs": [
+        {% for link in person.sameAs %}"{{ link }}"{% unless forloop.last %},
+        {% endunless %}{% endfor %}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}/#webpage",
+      "url": "{{ site.url }}/",
+      "isPartOf": { "@id": "https://jcubic.pl#website" },
+      "breadcrumb": { "@id": "{{ site.url }}/#breadcrumbs" }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "{{ site.url }}/",
+      "name": "{{ site.title }}",
+      "alternateName": "Projekt WikiZEIT",
+      "url": "{{ site.url }}/",
+      "logo": "{{ site.url }}/img/logo.svg",
+      "description": "Projekt edukacyjny poświęcony etycznemu SEO, danym strukturalnym i profesjonalnej edycji Wikipedii.",
+      "founder": { "@id": "{{ site.authorId }}" },
+      "foundingDate": "{{ site.foundingDate }}",
+      "knowsAbout": [
+        "Search Engine Optimization",
+        "SEO",
+        "GEO",
+        "AIO",
+        "Wikipedia",
+        "Entity SEO",
+        "Wikipedia",
+        "Traning",
+        "Teaching",
+        "Consulting",
+        "Wikidata",
+        "Open Source"
+      ],
+      "sameAs": [
+        {% for link in site.sameAs %}"{{ link }}"{% unless forloop.last %},
+        {% endunless %}{% endfor %}
+      ],
+      "mainEntityOfPage": {
+        "@id": "{{ site.url }}/#webpage"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jcubic.pl#website",
+      "url": "https://jcubic.pl",
+      "name": "jcubic.pl"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": "https://jcubic.pl#webpage",
+          "name": "Głównie JavaScript"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": "{{ site.url }}/#webpage",
+          "name": "WikiZEIT"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "WikiZEIT Blog Source Code",
+      "codeRepository": "https://github.com/WikiZEIT/blog",
+      "programmingLanguage": "PHP",
+      "author": { "@id": "{{ site.authorId }}" }
+    }
+  ]
+}
+</script>

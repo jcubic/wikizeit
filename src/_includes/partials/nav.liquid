@@ -1,0 +1,18 @@
+<nav class="site-nav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="{{ '/' | url }}"><img src="{{ '/img/logo.svg' | url }}" alt="WikiZEIT logo" class="logo-image" /></a>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link{% if page.url == '/blog/' %} active{% endif %}" href="{{ '/blog/' | url }}">Blog</a>
+      <a class="nav-link" href="/wikizeit/szkolenia/">Szkolenia i Konsultacje</a>
+      <a class="nav-link{% if page.url == '/about/' %} active{% endif %}" href="{{ '/about/' | url }}">O projekcie</a>
+      <a class="nav-cta" href="{{ '/contact/' | url }}">
+        Kontakt
+      </a>
+    </div>
+    <button class="menu-button">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+{
+    "title": "WikiZEIT",
+    "description": "Projekt edukacyjny o Wikipedii i etycznym SEO",
+    "longDescription": "WikiZeit: Projekt edukacyjny o Wikipedii i etycznym SEO Jakuba T. Janiewicza. Poznaj mechanizmy największej encyklopedii świata i zadbaj o widoczność swojej marki.",
+    "url": "https://jcubic.pl/wikizeit",
+    "baseUrl": "https://jcubic.pl",
+    "author": "Jakub T. Janiewicz",
+    "authorId": "https://jakub.jankiewicz.org",
+    "authorUrl": "https://jakub.jankiewicz.org/pl/",
+    "language": "pl",
+    "apiUrl": "/wikizeit/api",
+    "socialImage": "/wikizeit/img/social-card.png",
+    "logo": "img/logo.svg",
+    "email": "wikizeit@jcubic.pl",
+    "foundingDate": "2026-03-05",
+    "sameAs": [
+        "https://www.linkedin.com/company/wikizeit/",
+        "https://commons.wikimedia.org/wiki/Category:WikiZEIT",
+        "https://www.youtube.com/@WikiZEIT",
+        "https://github.com/WikiZEIT"
+    ]
+}

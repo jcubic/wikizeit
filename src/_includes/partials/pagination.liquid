@@ -1,0 +1,32 @@
+{% if pagination.pages.size > 1 %}
+<nav class="pagination" aria-label="Paginacja">
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous | url }}" aria-label="Poprzednia strona">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </a>
+  {% else %}
+    <span class="disabled" aria-hidden="true">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </span>
+  {% endif %}
+
+  {% for pageEntry in pagination.pages %}
+    {% assign pageNumber = forloop.index %}
+    {% if pageNumber == pagination.pageNumber | plus: 1 %}
+      <span class="current" aria-current="page">{{ pageNumber }}</span>
+    {% else %}
+      <a href="{{ pagination.hrefs[forloop.index0] | url }}">{{ pageNumber }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next | url }}" aria-label="Następna strona">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+  {% else %}
+    <span class="disabled" aria-hidden="true">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </span>
+  {% endif %}
+</nav>
+{% endif %}

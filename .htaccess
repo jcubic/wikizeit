@@ -1,5 +1,26 @@
-RewriteEngine on
+RewriteEngine On
 
-RewriteRule ^subscribers.db - [L,R=404]
-RewriteRule ^templates/ - [L,R=404]
-RewriteRule ^.git* - [L,R=404]
+# Protect sensitive files
+RewriteRule ^api/subscribers\.db$ - [R=404,L]
+RewriteRule ^api/templates/ - [R=404,L]
+RewriteRule ^api/lib/ - [R=404,L]
+RewriteRule ^api/composer\.(json|lock)$ - [R=404,L]
+
+# Route API requests to PHP
+RewriteRule ^api/(.*)$ api/$1 [L]
+
+# Szkolenia — symlink, let Apache serve it directly
+RewriteRule ^szkolenia/ - [L]
+
+# Home page — serve via PHP wrapper (for form message handling)
+RewriteRule ^$ index.php [L]
+
+# Clean URLs — directory-style URLs to path/index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ $1/index.html [L]
+
+# Clean URLs — without trailing slash, try as directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^.]+)$ $1/index.html [L]

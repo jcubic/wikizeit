@@ -1,0 +1,10 @@
+---
+layout: layouts/blog.liquid
+title: "Blog"
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
+---

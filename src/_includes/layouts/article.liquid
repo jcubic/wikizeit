@@ -1,0 +1,121 @@
+---
+layout: layouts/base.liquid
+schemaType: article
+---
+
+<main class="article-main">
+  <!-- Article Hero -->
+  <div class="article-hero">
+    {% if tags %}
+    <div class="article-category">
+      <span class="article-category-line"></span>
+      {% for tag in tags %}
+        {% unless tag == "post" %}
+          {{ tag }}{% unless forloop.last %}, {% endunless %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <h1 class="article-title">{{ title }}</h1>
+
+    <div class="article-meta">
+      <div class="article-author">
+        <div class="article-author-avatar">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+        <div>
+          <p class="article-author-name">{{ author | default: site.author }}</p>
+          <p class="article-author-role">{{ authorRole | default: "Autor" }}</p>
+        </div>
+      </div>
+      <div class="article-meta-item">
+        <span class="material-symbols-outlined">calendar_today</span>
+        <span>{{ date | dateFormat }}</span>
+      </div>
+      <div class="article-meta-item">
+        <span class="material-symbols-outlined">schedule</span>
+        <span>{{ content | readingTime }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Image -->
+  {% if featuredImage %}
+  <div class="article-featured-image">
+    <img src="{{ featuredImage | url }}" alt="{{ title }}" />
+    <div class="article-featured-image-overlay"></div>
+  </div>
+  {% endif %}
+
+  <!-- Article Grid -->
+  <div class="article-grid">
+    <!-- Article Content -->
+    <article class="article-content">
+      {{ content }}
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="article-sidebar">
+      <!-- Author Bio -->
+      <div class="sidebar-card">
+        <h3 class="sidebar-card-title">
+          <span class="material-symbols-outlined">person</span>
+          O autorze
+        </h3>
+        <div class="sidebar-author">
+          <div class="sidebar-author-avatar">
+            <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-primary);">person</span>
+          </div>
+          <h4>{{ author | default: site.author }}</h4>
+          <p class="role">{{ authorRole | default: "Autor" }}</p>
+          <p class="bio">{{ authorBio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      {% if tags %}
+      <div class="sidebar-card">
+        <h3 class="sidebar-card-title">
+          <span class="material-symbols-outlined">label</span>
+          Tagi
+        </h3>
+        <div class="tags-list">
+          {% for tag in tags %}
+            {% unless tag == "post" %}
+            <a class="tag-badge" href="{{ '/tags/' | url }}{{ tag | slugify }}/">{{ tag }}</a>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Related Articles -->
+      {% assign relatedPosts = collections.post | reverse | limit: 3 %}
+      {% if relatedPosts.size > 0 %}
+      <div class="sidebar-card">
+        <h3 class="sidebar-card-title">
+          <span class="material-symbols-outlined">article</span>
+          Inne artykuły
+        </h3>
+        <div class="sidebar-related">
+          {% for relPost in relatedPosts %}
+            {% unless relPost.url == page.url %}
+            <a href="{{ relPost.url | url }}">
+              {% if relPost.data.tags %}
+              <p class="related-tag">
+                {% for tag in relPost.data.tags %}
+                  {% unless tag == "post" %}{{ tag }}{% unless forloop.last %}, {% endunless %}{% endunless %}
+                {% endfor %}
+              </p>
+              {% endif %}
+              <h5>{{ relPost.data.title }}</h5>
+            </a>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</main>

@@ -1,0 +1,7 @@
+{% if collections.tagsList.size > 0 %}
+<div class="tags-list">
+  {% for tag in collections.tagsList %}
+    <a class="tag-badge" href="{{ '/tags/' | url }}{{ tag | slugify }}/">{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}

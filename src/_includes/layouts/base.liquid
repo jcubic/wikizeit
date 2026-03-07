@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="dark" lang="{{ site.language }}">
+  <head>
+    {% include "head.liquid" %}
+    {% if schemaType == "home" %}
+      {% include "partials/schema-home.liquid" %}
+    {% elsif schemaType == "article" %}
+      {% include "partials/schema-article.liquid" %}
+    {% endif %}
+  </head>
+  <body>
+    {% include "partials/nav.liquid" %}
+
+    {{ content }}
+
+    {% include "partials/footer.liquid" %}
+    {% include "partials/mobile-nav.liquid" %}
+
+    <script defer src="https://umami.jcubic.pl/script.js" data-website-id="c716ef1c-b60b-455c-8279-58996a09a8a6"></script>
+  </body>
+</html>

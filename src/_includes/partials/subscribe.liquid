@@ -1,0 +1,45 @@
+<section class="section-status" id="subscribe">
+  <div class="section-container">
+    <div class="status-card">
+      <div class="status-content">
+        <div class="status-text-container">
+          <div class="status-header">
+            <span class="material-symbols-outlined">construction</span>
+            <h3 class="status-title">Projekt w trakcie wdrażania</h3>
+          </div>
+          <p class="status-description">Dołącz do naszej społeczności i bądź na bieżąco z każdą aktualizacją.</p>
+        </div>
+        <div class="email-form-container">
+          <!-- form-message-placeholder -->
+          <form class="email-form" action="{{ site.apiUrl }}/subscribe/" method="POST">
+            <input type="hidden" name="redirect_url" value="{{ page.url }}" />
+            <input
+              type="email"
+              name="email_confirmation"
+              class="email-confirmation-field"
+              placeholder="Email confirmation"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <input
+              type="email"
+              name="email"
+              class="email-input"
+              placeholder="Twój adres email"
+              required
+              aria-label="Adres email"
+            />
+            <button type="submit" class="btn-primary email-submit">
+              Śledź postępy
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="status-bg-decoration">
+        <span class="material-symbols-outlined">code</span>
+      </div>
+    </div>
+  </div>
+</section>

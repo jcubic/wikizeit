@@ -1,0 +1,60 @@
+---
+layout: layouts/base.liquid
+---
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-gradient"></div>
+  <div class="page-hero-inner">
+    {% if badge %}
+    <div class="page-hero-badge">
+      <span class="material-symbols-outlined">info</span> {{ badge }}
+    </div>
+    {% endif %}
+    <h1 class="page-hero-title">{{ title }}</h1>
+    {% if description %}
+    <p class="page-hero-description">{{ description }}</p>
+    {% endif %}
+    {% if heroButtons %}
+    <div class="page-hero-buttons">
+      {% for btn in heroButtons %}
+        <a href="{{ btn.url | url }}" class="{{ btn.class | default: 'btn-primary' }}">{{ btn.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+  <nav>
+    <a href="{{ '/' | url }}">Strona główna</a>
+    <span class="material-symbols-outlined">chevron_right</span>
+    <span class="current">{{ title }}</span>
+  </nav>
+</div>
+
+<!-- Page Content -->
+<section class="page-content">
+  <div class="page-main">
+    {{ content }}
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="page-cta">
+  <div class="page-cta-inner">
+    <h2>Potrzebujesz więcej informacji?</h2>
+    <p>Nasz zespół jest dostępny, aby odpowiedzieć na Twoje pytania.</p>
+    <div class="page-cta-buttons">
+      <a class="btn-primary" href="{{ '/contact/' | url }}" style="display: inline-flex; align-items: center; gap: 0.5rem; height: auto; padding: 1rem 2rem;">
+        <span class="material-symbols-outlined">mail</span>
+        Napisz do nas
+      </a>
+      <a class="btn-outline-primary" href="{{ '/blog/' | url }}">
+        <span class="material-symbols-outlined">article</span>
+        Czytaj blog
+      </a>
+    </div>
+  </div>
+</section>

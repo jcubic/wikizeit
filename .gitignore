@@ -1,4 +1,7 @@
-vendor
+_site
+node_modules
+api/vendor
+api/subscribers.db
 subscribers.db
 tmp
 wikizeit

@@ -1,0 +1,15 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+  filter:
+    - all
+    - post
+    - tagsList
+permalink: "tags/{{ tag | slugify }}/"
+layout: layouts/blog.liquid
+eleventyComputed:
+  title: "Artykuły z tagiem: {{ tag }}"
+---
