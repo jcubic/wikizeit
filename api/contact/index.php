@@ -12,7 +12,7 @@ $redirectUrl = $_POST['redirect_url'] ?? WIKIZEIT_PATH . 'contact/';
 
 // Honeypot check
 if (!empty($_POST['name_confirmation'])) {
-    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_error', 'contact'));
+    header('Location: ' . buildRedirectUrl($redirectUrl, 'bot_error', 'contact'));
     exit;
 }
 

@@ -11,15 +11,10 @@ permalink: contact/
 
 <form class="contact-form" action="{{ site.apiUrl }}/contact/" method="POST">
   <input type="hidden" name="redirect_url" value="{{ page.url | url }}" />
-  <input
-    type="text"
-    name="name_confirmation"
-    class="email-confirmation-field"
-    placeholder="Name confirmation"
-    tabindex="-1"
-    autocomplete="off"
-    aria-hidden="true"
-  />
+  <div class="contact-form-group email-confirmation-field" aria-hidden="true">
+    <label class="contact-form-label" for="name_confirmation">Potwierdź email</label>
+    <input class="contact-form-input" type="text" id="name_confirmation" name="name_confirmation" placeholder="jan@example.com" tabindex="-1" autocomplete="off" />
+  </div>
   <div class="contact-form-group">
     <label class="contact-form-label" for="name">Imię i nazwisko</label>
     <input class="contact-form-input" type="text" id="name" name="name" required placeholder="Jan Kowalski" />

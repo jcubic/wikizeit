@@ -12,6 +12,7 @@ $messages = [
     'verify_success'    => ['type' => 'success', 'text' => 'Dziękujemy! Twój adres email został zweryfikowany. Będziesz otrzymywać aktualizacje o projekcie WikiZEIT.'],
     'verify_error'      => ['type' => 'error',   'text' => 'Nieprawidłowy lub wygasły link weryfikacyjny.'],
     'verify_info'       => ['type' => 'info',    'text' => 'Ten adres email został już wcześniej zweryfikowany.'],
+    'bot_error'         => ['type' => 'error',   'text' => 'Sorry, ale wygląda na to, że nie jesteś człowiekiem.'],
 ];
 
 // Read the static HTML (same directory after deployment)

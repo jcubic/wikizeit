@@ -8,6 +8,7 @@
 $messages = [
     'contact_success' => ['type' => 'success', 'text' => 'Dziękujemy! Twoja wiadomość została wysłana.'],
     'contact_error'   => ['type' => 'error',   'text' => 'Wystąpił błąd. Spróbuj ponownie później.'],
+    'bot_error'       => ['type' => 'error',   'text' => 'Sorry, ale wygląda na to, że nie jesteś człowiekiem.'],
 ];
 
 // Read the static HTML (contact/index.html in the same deployment directory)
