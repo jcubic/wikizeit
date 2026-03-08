@@ -26,6 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader
+        working-directory: api
+
       - name: Build
         run: npm run build
 
