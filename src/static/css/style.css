@@ -982,6 +982,16 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
 }
 
+.footer-social svg {
+    display: block;
+}
+
+.footer-social-x {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+}
+
 /* ==========================================================================
    8. Mobile Navigation
    ========================================================================== */
