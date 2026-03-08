@@ -419,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(24px);
 }
 
-.hero-card-icon {
+.hero-card-icon.material-symbols-outlined {
     font-size: 160px;
     color: rgba(180, 33, 4, 0.4);
 }
