@@ -23,7 +23,7 @@ $message = trim($_POST['message'] ?? '');
 
 // Validate required fields
 if (empty($name) || !$email || empty($subject) || empty($message)) {
-    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_error', 'contact'));
+    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_error', null));
     exit;
 }
 
@@ -34,8 +34,8 @@ $body .= "Name: " . $name . "\n";
 $body .= "Message:\n" . $message;
 
 if (sendPlainEmail('jcubic@jcubic.pl', 'WikiZEIT Kontakt: ' . $subject, $body, $email)) {
-    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_success', 'contact'));
+    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_success', null));
 } else {
-    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_error', 'contact'));
+    header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_error', null));
 }
 exit;

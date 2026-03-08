@@ -99,5 +99,5 @@ function buildRedirectUrl($redirectUrl, $msg, $anchor = 'subscribe') {
 
     // Add query parameter
     $separator = (strpos($redirectUrl, '?') !== false) ? '&' : '?';
-    return $redirectUrl . $separator . 'msg=' . urlencode($msg) . '#' . $anchor;
+    return $redirectUrl . $separator . 'msg=' . urlencode($msg) . (empty($anchor) ? '' : '#' . $anchor);
 }
