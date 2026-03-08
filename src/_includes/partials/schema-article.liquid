@@ -94,7 +94,21 @@
           "name": "{{ title }}"
         }
       ]
-    }
+    }{% if faq %},
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for item in faq %}{
+          "@type": "Question",
+          "name": {{ item.question | strip | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ item.answer | strip | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% endif %}
   ]
 }
 </script>
