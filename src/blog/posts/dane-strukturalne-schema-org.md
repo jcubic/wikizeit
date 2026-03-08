@@ -27,6 +27,15 @@ Dane strukturalne to dodatkowe informacje umieszczone w kodzie HTML strony, któ
 - Daty i lokalizacje wydarzeń
 - Panele wiedzy o organizacjach
 
+### Dane strukturalne a Semantic Web (Sieć Semantyczna)
+
+Wdrożenie danych strukturalnych to praktyczny krok w stronę realizacji wizji [**Semantic Web**](https://pl.wikipedia.org/wiki/Sie%C4%87_semantyczna). Jest to koncepcja "inteligentnego internetu" stworzona przez Tima Bernersa-Lee, w której maszyny nie tylko wyświetlają tekst, ale realnie rozumieją jego znaczenie i powiązania.
+
+Stosując ustandaryzowany słownik **Schema.org**, zmieniasz swoją stronę z prostego dokumentu w element globalnej sieci danych:
+* **Od słów do encji:** Wyszukiwarka przestaje widzieć tylko ciąg liter (np. "Jaguar"), a zaczyna rozpoznawać konkretny obiekt (samochód, zwierzę lub system).
+* **Łączenie faktów:** Dane o autorze, dacie publikacji i temacie wpisu tworzą logiczne powiązania, które zasilają bazy wiedzy, takie jak Google Knowledge Graph.
+* **Fundament dla AI:** Ustrukturyzowane informacje są kluczowe dla asystentów głosowych i modeli AI, które potrzebują precyzyjnych danych do generowania trafnych odpowiedzi.
+
 ## Format JSON-LD
 
 Google rekomenduje format **JSON-LD** (JavaScript Object Notation for Linked Data) jako preferowany sposób wdrożenia danych strukturalnych:
@@ -60,6 +69,13 @@ Najczęściej używane typy w kontekście SEO to:
 | `WebPage` | Strony internetowe |
 | `BreadcrumbList` | Nawigacja breadcrumb |
 | `FAQPage` | Strony z często zadawanymi pytaniami |
+
+Warto przejrzeć [oficjalną dokumentacje na stronie schema.org](https://schema.org/docs/documents.html).
+Pomocna jest także wyszukiwarka.
+
+Pamiętaj jednak, że nie każdy znacznik JSON-LD przekłada się na natychmiastowy efekt w wynikach wyszukiwania ([SERP](https://pl.wikipedia.org/wiki/SERP)) w postaci gwiazdek czy dodatkowych linków. Mimo to, zdecydowanie warto je dodawać. Dlaczego?
+
+Ponieważ dane strukturalne budują tzw. graf wiedzy o Twojej stronie – pomagają Google powiązać autora z tematem, a markę z produktem. Nawet jeśli dany element nie wyświetla się dziś jako "bajer" w wyszukiwarce, ułatwia on algorytmom precyzyjne dopasowanie Twojej treści do konkretnych zapytań użytkowników.
 
 ## Testowanie danych strukturalnych
 
