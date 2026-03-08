@@ -55,7 +55,11 @@ Najczęściej używane typy w kontekście SEO to:
 
 ## Testowanie danych strukturalnych
 
-Google udostępnia narzędzie do testowania danych strukturalnych: [Rich Results Test](https://search.google.com/test/rich-results). Warto sprawdzić swoje dane przed wdrożeniem na produkcję.
+Warto sprawdzić swoje dane przed wdrożeniem na produkcję.
+
+Pierwszą rzeczą jest sprawdzenie, czy mamy poprawny format JSON. Można do tego użyć narzędzia [JSON Lint](https://duckduckgo.com/?q=json+lint) (kopujemy całego JSONa i sprawdzamy czy nie ma błedów składni). Gdy mamy poprawny JSON, powinniśmy sprawdzić poprawność Schema.org, poprzez narzędzie [Walidatora Schema](https://validator.schema.org/).
+
+Gdy mamy powność, że wstępnie wszystko wygląda ok (poprawność na poziomie składni), możemy sprawdzić poprawność semantyczną (poprawnosć danych strukturalnych). Google udostępnia narzędzie do testowania tych danych: [Rich Results Test](https://search.google.com/test/rich-results).
 
 ## Podsumowanie
 
