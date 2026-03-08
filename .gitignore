@@ -3,6 +3,7 @@ node_modules
 api/vendor
 api/subscribers.db
 api/mail
+api/logs
 subscribers.db
 tmp
 wikizeit

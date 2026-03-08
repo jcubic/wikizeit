@@ -5,6 +5,8 @@ RewriteRule ^api/subscribers\.db$ - [R=404,L]
 RewriteRule ^api/templates/ - [R=404,L]
 RewriteRule ^api/lib/ - [R=404,L]
 RewriteRule ^api/composer\.(json|lock)$ - [R=404,L]
+RewriteRule ^api/logs/ - [R=404,L]
+RewriteRule ^api/mail/ - [R=404,L]
 
 # Route API requests to PHP
 RewriteRule ^api/(.*)$ api/$1 [L]

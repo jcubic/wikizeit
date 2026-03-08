@@ -90,6 +90,28 @@ function sendPlainEmail($to, $subject, $message, $replyTo = '') {
     return mail($to, $subject, $message, $headers);
 }
 
+// Log bot attempt to file
+function logBotAttempt($form, $data = []) {
+    $logFile = __DIR__ . '/../logs/bot.log';
+    $logDir = dirname($logFile);
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0777, true);
+    }
+    $entry = date('Y-m-d H:i:s')
+        . ' [' . $form . ']'
+        . ' IP=' . ($_SERVER['REMOTE_ADDR'] ?? 'unknown')
+        . ' UA=' . ($_SERVER['HTTP_USER_AGENT'] ?? 'unknown');
+    foreach ($data as $key => $value) {
+        $entry .= ' ' . $key . '=' . json_encode($value, JSON_UNESCAPED_UNICODE);
+    }
+    file_put_contents($logFile, $entry . "\n", FILE_APPEND | LOCK_EX);
+}
+
+// Sanitize string for use in email headers/subject (strip CR/LF to prevent header injection)
+function sanitizeHeader($value) {
+    return str_replace(["\r", "\n"], '', trim($value));
+}
+
 // Build redirect URL with message parameter
 function buildRedirectUrl($redirectUrl, $msg, $anchor = 'subscribe') {
     // Default to home page

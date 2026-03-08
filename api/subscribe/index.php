@@ -12,6 +12,10 @@ $redirectUrl = $_POST['redirect_url'] ?? WIKIZEIT_PATH;
 
 // Check honeypot field
 if (!empty($_POST['email_confirmation'])) {
+    logBotAttempt('subscribe', [
+        'honeypot' => $_POST['email_confirmation'],
+        'email' => $_POST['email'] ?? '',
+    ]);
     header('Location: ' . buildRedirectUrl($redirectUrl, 'bot_error'));
     exit;
 }
